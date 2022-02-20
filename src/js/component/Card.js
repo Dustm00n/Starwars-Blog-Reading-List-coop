@@ -1,60 +1,29 @@
 import React from "react";
+import propTypes from "prop-types";
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-4">
-      <div className="col">
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="col">
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="col">
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="col">
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-        </div>
+    <div className="Card">
+      <img src={props.cardImage} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{props.cardTitle}</h5>
+        <p className="card-text">{props.cardText}</p>
+        <Link to={"/Detail/characters"}>
+          <a href="#" className="btn btn-primary">
+            {props.cardBigButton}
+          </a>
+        </Link>
+        <a href="#" className="btn btn-outline-warning mr-6">
+          <i class="far fa-heart"></i>
+        </a>
       </div>
     </div>
   );
+};
+Card.propTypes = {
+  cardTitle: propTypes.string,
+  cardText: propTypes.string,
+  cardBigButton: propTypes.string,
+  cardImage: propTypes.any,
 };
 export default Card;
