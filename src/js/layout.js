@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
